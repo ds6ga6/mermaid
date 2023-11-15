@@ -326,7 +326,8 @@ const setClickFun = function (id, functionName, functionArgs) {
       if (elem !== null) {
         elem.addEventListener(
           'click',
-          function () {
+          function (event) {
+            argList.unshift(event)
             utils.runFunc(functionName, ...argList);
           },
           false
